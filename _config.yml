@@ -1,6 +1,7 @@
 theme: just-the-docs
 title: Samsung Docs
 description: Documentation for all Samsung's stuff
+baseurl: "/samsung-doc"
 url: "https://samsung-loki.github.io"
 
 permalink: pretty
