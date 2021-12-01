@@ -1,4 +1,6 @@
 theme: just-the-docs
+remote_theme: pmarsceill/just-the-docs
+
 title: Samsung Docs
 description: Documentation for all Samsung's stuff
 
