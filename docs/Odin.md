@@ -37,10 +37,10 @@ Read: `0x67(End Session) 0x00(Unknown)`
 Write: `0x64(Session) 0x01(Device Type)` \
 Read: `0x64(Session) 0x00(Unknown)`
 ### Total Bytes
-Write: `0x64(Session) 0x00(Begin) 0x2(Total Bytes) <64bit>(Bytes Length)` \
+Write: `0x64(Session) 0x02(Total Bytes) <64bit>(Bytes Length)` \
 Read: `0x64(Session) 0x00(Unknown)`
 ### Enable T-Flash
-Write: `0x64(Session) 0x00(Begin) 0x5(T-Flash)` \
+Write: `0x64(Session) 0x05(T-Flash)` \
 Read: `0x64(Session) 0x00(Unknown)`
 ## PIT (0x65)
 ### Flashing
