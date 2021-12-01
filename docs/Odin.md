@@ -38,10 +38,10 @@ Write: `0x64(Session) 0x67(End) 0x00(NoReboot)` -or- `0x67(End Session) 0x01(Reb
 Read: `0x67(End Session)`
 ### Device Type
 Write: `0x64(Session) 0x01(Device Type)` \
-Read: `0x64(Session) 0x00(Unknown)`
+Read: `0x64(Session) <32bit>(Device Type)`
 ### Total Bytes
 Write: `0x64(Session) 0x02(Total Bytes) <64bit>(Bytes Length)` \
-Read: `0x64(Session) 0x00(Device Type)`
+Read: `0x64(Session) 0x00(Unknown)`
 ### Enable T-Flash
 Write: `0x64(Session) 0x05(T-Flash)` \
 Read: `0x64(Session) 0x00(Unknown)`
