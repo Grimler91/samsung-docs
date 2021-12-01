@@ -19,7 +19,7 @@ To perform a handshake, you need to send "ODIN", and check if response is "LOKE"
 
 ## Session (0x64)
 ### Begin Session
-Write: `0x64(Session) 0x00(Begin)` -or- `0x64(Session) 0x00(Begin) 0x04(Odin v4)` \
+Write: `0x64(Session) 0x00(Begin) 0x03(Odin v3)` -or- `0x64(Session) 0x00(Begin) 0x04(Odin v4)` \
 Read: `0x64(Session) 0x00(Unknown)`
 
 If Unknown is not 0:
