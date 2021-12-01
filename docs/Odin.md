@@ -17,6 +17,9 @@ To perform a handshake, you need to send "ODIN", and check if response is "LOKE"
 * Sequence: Size is *Packet size for file transfer* multiplied by *File transfer max sequence size*
 * File Part: Size is *Packet size for file transfer*.
 
+## Other
+* `Unknown`s should be always 0x00. If it's not, you're in trouble.
+
 ## Session (0x64)
 ### Begin Session
 Write: `0x64(Session) 0x00(Begin) 0x03(Odin v3)` -or- `0x64(Session) 0x00(Begin) 0x04(Odin v4)` \
@@ -38,7 +41,7 @@ Write: `0x64(Session) 0x01(Device Type)` \
 Read: `0x64(Session) 0x00(Unknown)`
 ### Total Bytes
 Write: `0x64(Session) 0x02(Total Bytes) <64bit>(Bytes Length)` \
-Read: `0x64(Session) 0x00(Unknown)`
+Read: `0x64(Session) 0x00(Device Type)`
 ### Enable T-Flash
 Write: `0x64(Session) 0x05(T-Flash)` \
 Read: `0x64(Session) 0x00(Unknown)`
