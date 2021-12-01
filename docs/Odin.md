@@ -31,8 +31,8 @@ If Unknown is not 0:
   * If Unknown is not 0, throw an error.
 
 ### End Session
-Write: `0x67(End Session) 0x00(NoReboot)` -or- `0x67(End Session) 0x01(Reboot)` \
-Read: `0x67(End Session) 0x00(Unknown)`
+Write: `0x64(Session) 0x67(Session) 0x00(NoReboot)` -or- `0x67(End Session) 0x01(Reboot)` \
+Read: `0x64(Session) 0x67(Session) 0x00(Unknown)`
 ### Device Type
 Write: `0x64(Session) 0x01(Device Type)` \
 Read: `0x64(Session) 0x00(Unknown)`
