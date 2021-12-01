@@ -90,5 +90,5 @@ Write: `0x66(File) 0x03(End) 0x00(Phone/AP) <32bit>(Sequence Byte Length) 0x0(Un
 Read: `0x66(File)`
 ### Request file dump
 **Warning!** This may work but it is not comfirmed. \
-Write: `0x66(File) 0x1(Dump)` \
+Write: `0x66(File) 0x01(Dump)` \
 Read: `<unknown>`
