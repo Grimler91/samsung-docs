@@ -82,11 +82,11 @@ Write: `<File part data>` \
 Read: `0x00(File Part) <32bit>(File Part Index)`
 ### End file sequence flash: MODEM
 Send an empty packet before and after. \
-Write: `0x66(File) 0x03(End) 0x01(Modem/CP) <32bit>(Sequence Byte Length) 0x0(Unknown) <32bit>(Device Type) <32bit>(Identifier) <32bit>(Is last File Part)` \
+Write: `0x66(File) 0x03(End) 0x01(Modem/CP) <32bit>(Sequence Byte Length) 0x0(Unknown) <32bit>(Device Type) <32bit>(Identifier) <32bit>(Is last Sequence)` \
 Read: `0x66(File)`
 ### End file sequence flash: PHONE
 Send an empty packet before and after. \
-Write: `0x66(File) 0x03(End) 0x00(Phone/AP) <32bit>(Sequence Byte Length) 0x0(Unknown) <32bit>(Device Type) <32bit>(Identifier) <32bit>(Is last File Part)` \
+Write: `0x66(File) 0x03(End) 0x00(Phone/AP) <32bit>(Sequence Byte Length) 0x0(Unknown) <32bit>(Device Type) <32bit>(Identifier) <32bit>(Is last Sequence)` \
 Read: `0x66(File)`
 ### Request file dump
 **Warning!** This may work but it is not comfirmed. \
