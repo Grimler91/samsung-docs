@@ -10,7 +10,8 @@ If you just wanna to flash firmware onto a Samsung phone, click Hreidmar button 
 It is an implementation of this protocol, tested on Samsung Galaxy A20s.
 
 ## Handshake
-To perform a handshake, you need to send "ODIN", and check if response is "LOKE".
+To perform a handshake, you need to send "ODIN", and check if response is "LOKE". \
+It is also known as protocol initialization. It can be done once for an USB connection.
 
 ## Defaults
 * Read/Write timeout for file transfer: 30000 (30 seconds)
@@ -22,7 +23,8 @@ To perform a handshake, you need to send "ODIN", and check if response is "LOKE"
 * File Part: Size is *Packet size for file transfer*.
 
 ## Other
-* `Unknown`s should be always 0x00. If it's not, you're in trouble.
+* `Unknown` should be always 0x00. If it's not, you're in trouble.
+* All non-flash packets should be sent with buffer length 1024, else the packet will be rejected.
 
 ## Session (0x64)
 ### Begin Session
@@ -35,11 +37,10 @@ If Unknown is not 0:
 * File transfer max sequence size: 30 (Packets)
 * Send `0x64(Session) 0x05(FilePartSize) 0x100000(Packet Size)`
 * Read `0x64(Session) 0x00(Unknown)`
-  * If Unknown is not 0, throw an error.
 
 ### End Session
-Write: `0x64(Session) 0x67(End) 0x00(NoReboot)` -or- `0x67(End Session) 0x01(Reboot)` \
-Read: `0x67(End Session)`
+Write: `0x67(End Session) 0x00(NoReboot)` -or- `0x67(End Session) 0x01(Reboot)` \
+Read: `0x67(End Session) <32bit>(Untested)`
 ### Device Type
 Write: `0x64(Session) 0x01(Device Type)` \
 Read: `0x64(Session) <32bit>(Device Type)`
@@ -53,16 +54,16 @@ Read: `0x64(Session) 0x00(Unknown)`
 ### Flashing
 #### Request PIT flash
 Write: `0x65(PIT) 0x00(Flash)` \
-Read: `0x65(PIT)`
+Read: `0x65(PIT) <32bit>(Untested)`
 #### Begin PIT Flash
 Write: `0x65(PIT) 0x02(Begin) <32bit>(Byte Length)` \
-Read: `0x65(PIT)`
+Read: `0x65(PIT) <32bit>(Untested)`
 #### Send PIT data
 Write: `<PIT data buffer>` \
-Read: `0x65(PIT)`
+Read: `0x65(PIT) <32bit>(Untested)`
 #### End PIT Flash
 Write: `0x65(PIT) 0x03(End)` \
-Read: `0x65(PIT)`
+Read: `0x65(PIT) <32bit>(Untested)`
 ### Dumping
 #### Request PIT data dump
 Write: `0x65(PIT) 0x01(Dump)` \
@@ -75,14 +76,14 @@ Read: `<PIT data block>`
 #### End PIT dump
 Identical to End PIT flash. \
 Write: `0x65(PIT) 0x03(End)` \
-Read: `0x65(PIT)`
+Read: `0x65(PIT) <32bit>(Untested)`
 ## File (0x66)
 ### Request file flash
 Write: `0x66(File) 0x00(Flash)` \
-Read: `0x66(File)`
+Read: `0x66(File) <32bit>(Untested)`
 ### Begin file sequence flash
 Write: `0x66(File) 0x02(FilePart) <32bit>(Byte Length)` \
-Read: `0x66(File)`
+Read: `0x66(File) <32bit>(Untested)`
 ### Flash a file part
 Send an empty packet for the first file part. \
 Write: `<File part data>` \
@@ -90,11 +91,11 @@ Read: `0x00(File Part) <32bit>(File Part Index)`
 ### End file sequence flash: MODEM
 Send an empty packet before and after. \
 Write: `0x66(File) 0x03(End) 0x01(Modem/CP) <32bit>(Sequence Byte Length) 0x00(Unknown) <32bit>(Device Type) <32bit>(Identifier) <32bit>(Is last Sequence)` \
-Read: `0x66(File)`
+Read: `0x66(File) <32bit>(Untested)`
 ### End file sequence flash: PHONE
 Send an empty packet before and after. \
 Write: `0x66(File) 0x03(End) 0x00(Phone/AP) <32bit>(Sequence Byte Length) 0x00(Unknown) <32bit>(Device Type) <32bit>(Identifier) <32bit>(Is last Sequence)` \
-Read: `0x66(File)`
+Read: `0x66(File) <32bit>(Untested)`
 ### Request file dump
 **Warning!** This may work but it is not comfirmed. \
 Write: `0x66(File) 0x01(Dump)` \
