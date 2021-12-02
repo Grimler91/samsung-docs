@@ -5,6 +5,10 @@ description: FUS Protocol
 nav_order: 2
 ---
 
+## Warning
+If you just wanna to download Samsung's firmware from their official servers, click Syndical button below. \
+It is an implementation of this protocol, tested by me.
+
 ## Authentication
 Headers:
 ```
