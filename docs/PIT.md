@@ -17,6 +17,7 @@ Type: 32-bit number
 Value: 
 * AP = 0
 * BL = 1
+
 ### Device Type
 Type: 32-bit number
 Value:
@@ -24,6 +25,7 @@ Value:
 * File = 1
 * MMC = 2
 * All = 3
+
 ### Identitifier
 Type: 32-bit number
 ### Attributes
@@ -31,11 +33,13 @@ Type: 32-bit number
 Flags:
 * STL = 0x0001
 * Write = 0x0010
+
 ### Update Attributes
 Type: 32-bit number
 Flags:
 * FOTA = 0x0001
 * Secure = 0x0010
+
 ### Block size/offset
 Type: 32-bit number
 ### Block count
