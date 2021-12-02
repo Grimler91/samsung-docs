@@ -5,6 +5,10 @@ description: Odin Protocol v3/v4
 nav_order: 3
 ---
 
+## Warning
+If you just wanna to flash firmware onto a Samsung phone, click Hreidmar button below, or use leaked Odin. \
+It is an implementation of this protocol, tested on Samsung Galaxy A20s.
+
 ## Handshake
 To perform a handshake, you need to send "ODIN", and check if response is "LOKE".
 
