@@ -11,4 +11,4 @@ Here is all currently known about Samsung's stuff.
 
 How to download Samsung's firmware from official sources: [FUS protocol](https://samsung-loki.github.io/samsung-docs/docs/FUS/) \
 How to flash firmware onto Samsung phones: [Odin protocol](https://samsung-loki.github.io/samsung-docs/docs/Odin/) \
-PIT file specification: [PIT file](https://samsung-loki.github.io/samsung-docs/docs/PIT/) \
+PIT file specification: [PIT file](https://samsung-loki.github.io/samsung-docs/docs/PIT/)
