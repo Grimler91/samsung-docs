@@ -90,7 +90,7 @@ Write: `<File part data>` \
 Read: `0x00(File Part) <32bit>(File Part Index)`
 ### End file sequence flash: MODEM
 Send an empty packet before and after. \
-Write: `0x66(File) 0x03(End) 0x01(Modem/CP) <32bit>(Sequence Byte Length) 0x00(Unknown) <32bit>(Device Type) <32bit>(Identifier) <32bit>(Is last Sequence)` \
+Write: `0x66(File) 0x03(End) 0x01(Modem/CP) <32bit>(Sequence Byte Length) 0x00(Unknown) <32bit>(Device Type) <32bit>(Is last Sequence)` \
 Read: `0x66(File) <32bit>(Untested)`
 ### End file sequence flash: PHONE
 Send an empty packet before and after. \
