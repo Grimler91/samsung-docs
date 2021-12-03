@@ -15,8 +15,8 @@ One entry is 132 bytes long.
 ### Binary Type
 Type: 32-bit number
 Value: 
-* AP = 0
-* BL = 1
+* AP/Phone = 0
+* CP/Modem = 1
 
 ### Device Type
 Type: 32-bit number
