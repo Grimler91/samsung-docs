@@ -59,5 +59,6 @@ Type: 32 bytes long string
 ## Signer data
 After that we have 5 16-chars long strings.
 ## SignerVer02
-2-4 should be ignored as they not contain anything we need. \
-5th one is time and date. After that we have a 32-chars long string with PIT's ID, probably.
+2nd and 4th should be ignored as they not contain anything we need. \
+3rd one is the firmware version. 5th one is time and date. \
+After that we have a 32-chars long string with PIT's ID, probably.
