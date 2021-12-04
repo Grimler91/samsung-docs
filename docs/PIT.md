@@ -7,7 +7,8 @@ nav_order: 4
 
 ## Header
 `0x12349876` is the magic number that is located in first 4 bytes of a PIT file. \
-After that we have 8 32-bit numbers, it's unknown what does they do.
+Skip next 32-bit number, and then we have two 8 chars long strings: `COM_TAR2` and `SDM710`, for example. \
+First is unknown, but the second is probaby processors ID/model.
 
 ## Entries
 Entries begin after first 28 bytes. \
@@ -54,3 +55,9 @@ Type: 32 bytes long string
 Type: 32 bytes long string
 ### FOTA name
 Type: 32 bytes long string
+
+## Signer data
+After that we have 5 16-chars long strings.
+## SignerVer02
+2-4 should be ignored as they not contain anything we need. \
+5th one is time and date. After that we have a 32-chars long string with PIT's ID, probably.
