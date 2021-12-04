@@ -8,7 +8,7 @@ nav_order: 4
 ## Header
 `0x12349876` is the magic number that is located in first 4 bytes of a PIT file. \
 Skip next 32-bit number, and then we have two 8 chars long strings: `COM_TAR2` and `SDM710`, for example. \
-First is unknown, but the second is probaby processors ID/model.
+First is unknown, but the second is probably processors ID/model.
 
 ## Entries
 Entries begin after first 28 bytes. \
