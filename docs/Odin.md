@@ -37,19 +37,32 @@ If Unknown is not 0:
 * File transfer max sequence size: 30 (Packets)
 * Send `0x64(Session) 0x05(FilePartSize) 0x100000(Packet Size)`
 * Read `0x64(Session) 0x00(Unknown)`
-
-### End Session
-Write: `0x67(End Session) 0x00(NoReboot)` -or- `0x67(End Session) 0x01(Reboot)` \
-Read: `0x67(End Session) <32bit>(Untested)`
 ### Device Type
+**WARNING!** This no longer returns what do you expect. \
+It does something other that giving out the device type. \
+It always returns zero according to `aboot.mbn`. \
 Write: `0x64(Session) 0x01(Device Type)` \
 Read: `0x64(Session) <32bit>(Device Type)`
+### Erase userdata
+**WARNING!** This is do a factory reset. \
+Write: `0x64(Session) 0x07(Erase)` \
+Read: `0x64(Session) 0x00(Unknown)`
 ### Total Bytes
 Write: `0x64(Session) 0x02(Total Bytes) <64bit>(Bytes Length)` \
 Read: `0x64(Session) 0x00(Unknown)`
 ### Enable T-Flash
 Write: `0x64(Session) 0x05(T-Flash)` \
 Read: `0x64(Session) 0x00(Unknown)`
+## End Session (0x67)
+### End Session
+Write: `0x67(End Session) 0x00(End)` \
+Read: `0x67(End Session) <32bit>(Untested)`
+### Reboot
+Write: `0x67(End Session) 0x01(Reboot)` \
+Read: `0x67(End Session) <32bit>(Untested)`
+### Shutdown
+Write: `0x67(End Session) 0x03(Shutdown)` \
+Read: `0x67(End Session) <32bit>(Untested)`
 ## PIT (0x65)
 ### Flashing
 #### Request PIT flash
@@ -96,7 +109,3 @@ Read: `0x66(File) <32bit>(Untested)`
 Send an empty packet before and after. \
 Write: `0x66(File) 0x03(End) 0x00(Phone/AP) <32bit>(Sequence Byte Length) 0x00(Unknown) <32bit>(Device Type) <32bit>(Identifier) <32bit>(Is last Sequence)` \
 Read: `0x66(File) <32bit>(Untested)`
-### Request file dump
-**Warning!** This may work but it is not comfirmed. \
-Write: `0x66(File) 0x01(Dump)` \
-Read: `<unknown>`
