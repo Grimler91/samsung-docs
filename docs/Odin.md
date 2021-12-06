@@ -9,10 +9,6 @@ nav_order: 3
 If you just wanna to flash firmware onto a Samsung phone, click Hreidmar button below, or use leaked Odin. \
 It is an implementation of this protocol, tested on Samsung Galaxy A20s.
 
-## Handshake
-To perform a handshake, you need to send "ODIN", and check if response is "LOKE". \
-It is also known as protocol initialization. It can be done once for an USB connection.
-
 ## Defaults
 * Read/Write timeout for file transfer: 30000 (30 seconds)
 * Packet size for file transfer: 131072 (128 KiB)
@@ -26,6 +22,25 @@ It is also known as protocol initialization. It can be done once for an USB conn
 * `Unknown` should be always 0x00. If it's not, you're in trouble.
 * All non-flash packets should be sent with buffer length 1024, else the packet will be rejected.
 
+## Handshake
+It is also known as protocol initialization. It can be done once for an USB connection. \
+Write: `ODIN` \
+Read: `LOKE`
+## Rooting
+**Warning!** This command was found while looking at the `aboot.mbn` and was not tested yet! \
+Also, it's purpose is yet unknown, so be careful! \
+Write: `ROOTING` \
+Read: `<untested, 88 bytes>`
+## SECCMD
+**Warning!** This command was found while looking at the `aboot.mbn` and was not tested yet! \
+Also, it's purpose is yet unknown, so be careful! \
+Write: `SECCMD` \
+Read: `<untested, dynamic length>` 
+## DVIF
+**Warning!** This command was found while looking at the `aboot.mbn` and was not tested yet! \
+By looking at it's code, it prints something on the screen and probably does something more. \
+Write: `DVIF` \
+Read: `<untested, dynamic length>`
 ## Session (0x64)
 ### Begin Session
 Write: `0x64(Session) 0x00(Begin) 0x03(Odin v3)` -or- `0x64(Session) 0x00(Begin) 0x04(Odin v4)` \
