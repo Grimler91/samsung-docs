@@ -37,10 +37,8 @@ Also, it's purpose is yet unknown, so be careful! \
 Write: `SECCMD` \
 Read: `<untested, dynamic length>` 
 ## DVIF
-**Warning!** This command was found while looking at the `aboot.mbn` and was not tested yet! \
-By looking at it's code, it prints something on the screen and probably does something more. \
 Write: `DVIF` \
-Read: `<untested, dynamic length>`
+Read: `@#MODEL=<model>;UN=<unknown>;CAPA=<unknown>;VENDOR=SAMSUNG;FWVER=<probably efuse>;PRODUCT=<unknown, GX6BMB for me>;SALES=<region>;VER=<firmware version>;DID=<unknown>;RAND=(base64 encoded random string)@#`, length is 183 bytes.
 ## Session (0x64)
 ### Begin Session
 Write: `0x64(Session) 0x00(Begin) 0x03(Odin v3)` -or- `0x64(Session) 0x00(Begin) 0x04(Odin v4)` \
