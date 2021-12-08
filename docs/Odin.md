@@ -29,14 +29,17 @@ Read: `LOKE`
 ## Rooting
 **Warning!** This command was found while looking at the `aboot.mbn` and was not tested yet! \
 Also, it's purpose is yet unknown, so be careful! \
+Should be done before handshake. \
 Write: `ROOTING` \
 Read: `<untested, 88 bytes>`
 ## SECCMD
 **Warning!** This command was found while looking at the `aboot.mbn` and was not tested yet! \
 Also, it's purpose is yet unknown, so be careful! \
+Should be done before handshake. \
 Write: `SECCMD` \
 Read: `<untested, dynamic length>` 
 ## DVIF
+Should be done before handshake. \
 Write: `DVIF` \
 Read: 
 ```
