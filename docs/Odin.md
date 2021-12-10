@@ -58,9 +58,6 @@ If Unknown is not 0:
 * Send `0x64(Session) 0x05(FilePartSize) 0x100000(Packet Size)`
 * Read `0x64(Session) 0x00(Unknown)`
 ### Device Type
-**WARNING!** This no longer returns what do you expect. \
-It does something other that giving out the device type. \
-It always returns zero according to `aboot.mbn`. \
 Write: `0x64(Session) 0x01(Device Type)` \
 Read: `0x64(Session) <32bit>(Device Type)`
 ### Erase userdata
