@@ -5,6 +5,10 @@ description: Samsung Partition Table Format
 nav_order: 4
 ---
 
+## Warning
+The PIT format is not yet fully documented and most of it's parts are unknown. \
+Also things vary from device to device.
+
 ## Header
 `0x12349876` is the magic number that is located in first 4 bytes of a PIT file. \
 Skip next 32-bit number, and then we have two 8 chars long strings: `COM_TAR2` and `SDM710`, for example. \
@@ -55,10 +59,3 @@ Type: 32 bytes long string
 Type: 32 bytes long string
 ### FOTA name
 Type: 32 bytes long string
-
-## Signer data
-After that we have 5 16-chars long strings.
-## SignerVer02
-2nd and 4th should be ignored as they not contain anything we need. \
-3rd one is the firmware version. 5th one is time and date. \
-After that we have a 32-chars long string with PIT's ID, probably.
